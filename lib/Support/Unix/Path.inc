@@ -377,7 +377,7 @@ static bool is_local_impl(struct STATVFS &Vfs) {
   default:
     return true;
   }
-#elif defined(__CYGWIN__)
+#elif defined(__CYGWIN__) || defined(__EMSCRIPTEN__)
   // Cygwin doesn't expose this information; would need to use Win32 API.
   return false;
 #elif defined(__sun)
